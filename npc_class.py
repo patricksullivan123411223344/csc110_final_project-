@@ -34,6 +34,7 @@ class NPC():
         }
     
     def is_tutor_active(self, player_message: str) -> None:
+        # REVIEW: Careful
         if "question" or "confused" in player_message:
             self.tutor_active = True
 
@@ -60,6 +61,8 @@ class NPC():
                 with open(filename, "r") as f:
                     data = json.load(f)
                 self.ltm = data
+                self.user_profile = self.ltm.get("Student Profile", self.user_profile)
+                self.user_state = self.ltm.get("Student State", self.user_state)
             except json.JSONDecodeError:
                 print(f"Error: Invalid JSON in {filename}")
 
@@ -75,6 +78,7 @@ class NPC():
 
     def ask_good_questions(self) -> str:
         skill_level = self.user_profile["Skill Level"]
+        print(f"DEBUG: skill_level = '{skill_level}' (type: {type(skill_level)})")  # Debugging 
         filepath = self.skill_level_filepath.get(skill_level)
 
         if not filepath:

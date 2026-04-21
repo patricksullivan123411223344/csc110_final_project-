@@ -6,5 +6,45 @@
     {
         "role": "assistant",
         "content": "Hello, Patrick! It\u2019s nice to meet you. How\u2019s your day going so far?"
+    },
+    {
+        "role": "user",
+        "content": "Hello"
+    },
+    {
+        "role": "assistant",
+        "content": "Hello, Patrick! It\u2019s nice to meet you. How\u2019s your day going so far?"
+    },
+    {
+        "role": "user",
+        "content": "hello"
+    },
+    {
+        "role": "assistant",
+        "content": "Hello, Patrick! It\u2019s nice to meet you. How\u2019s your day going so far?"
+    },
+    {
+        "role": "user",
+        "content": "what is my subject of interest and skill level"
+    },
+    {
+        "role": "assistant",
+        "content": "Okay, Patrick. Your subject of interest is Computer Science, and your skill level is Beginner."
+    },
+    {
+        "role": "user",
+        "content": "Where do you think I should start based off of this?"
+    },
+    {
+        "role": "assistant",
+        "content": "To give you the best starting point, Patrick, let\u2019s start with a simple question.  Do you have a particular area within Computer Science you\u2019re interested in learning more about \u2013 like programming, algorithms, or something else?"
+    },
+    {
+        "role": "user",
+        "content": "hello. please list my name, subject of interest, and skill level"
+    },
+    {
+        "role": "assistant",
+        "content": "Okay, Patrick. Your name is Patrick. Your subject of interest is Computer Science, and your skill level is Beginner."
     }
 ]
