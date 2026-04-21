@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device_width, initial_scale=1.0">
+        <title>Tutor Bot</title>
+        <link rel="stylesheet" href="/frontend/index.css">
+        <meta name="description" content="LLM Tutor Bot For All Skill Levels and Ages">
+    </head>
+    <body>
+
+        <div class="title">
+            <h1 class="titleText">Welcome, User</h1>
+        </div>
+
+        <div class="chatboxBlock">
+            <div class="chatHeader"><h3>Ask anything</h3></div>
+            <div class="chatBody" id="chatBody">
+                <div class="message_box">
+                    Hello! How can I help you?
+                </div>
+            </div>
+            <div class="chatFooter">
+                <input type="text" id="userInput" placeholder="Type a message...">
+                <button id="sendChatBtn">Send</button>
+            </div>
+        </div>
+
+        <script>
+            const chatBody = document.getElementById("chatBody");
+            const userInput = document.getElementById("userInput");
+            const sendBtn = document.getElementById("sendChatBtn")
+
+            function appendMessage(text, sender) {
+                const div = document.createElement("div");
+                div.classList.add("message_box", sender);
+                div.textContent = text;
+                chatBody.appendChild(div);
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }
+
+            async function sendMessage() {
+                const message = userInput.value.trim();
+                if (!message) return;
+
+                appendMessage(message, "user")
+                userInput.value = "";
+
+                // POST to Flask
+                const res = await fetch("/chat", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ message })
+                });
+
+                const data = await res.json();
+                appendMessage(data.reply, "bot");
+            }
+
+            sendBtn.addEventListener("click", sendMessage);
+
+            userInput.addEventListener("keydown", (e) => {
+                if (e.key === "Enter") sendMessage();
+            });
+        </script>
+    </body>
+</html>

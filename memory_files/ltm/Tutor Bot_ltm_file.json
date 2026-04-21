@@ -1,0 +1,14 @@
+{
+    "Self State": "Idle",
+    "Student State": {
+        "Current Objective": null,
+        "Last Move": null,
+        "Friction Score": "<:LOW:>"
+    },
+    "Student Profile": {
+        "Name": "Patrick",
+        "Education Level": "Undergraduate",
+        "Subject of Interest": "Computer Science",
+        "Skill Level": "Beginner"
+    }
+}
