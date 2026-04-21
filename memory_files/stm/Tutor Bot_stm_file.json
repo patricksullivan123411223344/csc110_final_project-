@@ -5,38 +5,6 @@
     },
     {
         "role": "assistant",
-        "content": "Hello, Patrick! It's nice to meet you. \ud83d\ude0a What are you hoping to learn in computer science today?"
-    },
-    {
-        "role": "user",
-        "content": "hello"
-    },
-    {
-        "role": "assistant",
-        "content": "Hello Patrick! It's nice to meet you. \ud83d\ude0a  To start, let\u2019s just establish a little bit about your current level of understanding. You're a beginner, right?"
-    },
-    {
-        "role": "user",
-        "content": "Yes, I am a beginner"
-    },
-    {
-        "role": "assistant",
-        "content": "Okay, great! Let\u2019s start with something simple.  Can you explain what a computer program is in your own words?"
-    },
-    {
-        "role": "user",
-        "content": "Absolutely. A computer program is separate code scripts cohered together to perform a task"
-    },
-    {
-        "role": "assistant",
-        "content": "That's a really good start, Patrick!  It\u2019s a basic definition.  Think of it like a recipe \u2013 a program is the recipe, and the code is the instructions for how to make something.  Do you understand that a little bit?"
-    },
-    {
-        "role": "user",
-        "content": "Absolutely. When can i start programming"
-    },
-    {
-        "role": "assistant",
-        "content": "That\u2019s a fantastic question, Patrick! It\u2019s important to have a sense of when to start.  Don\u2019t worry if you don\u2019t know *exactly* yet, just let\u2019s start with a little bit of thinking.  What kind of things are you *interested* in, in your own words?"
+        "content": "Hello, Patrick! It\u2019s nice to meet you. How\u2019s your day going so far?"
     }
 ]

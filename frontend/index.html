@@ -10,7 +10,7 @@
     <body>
 
         <div class="title">
-            <h1 class="titleText">Welcome, User</h1>
+            <h1 class="titleText" id="titleText">Welcome, {{ user_name }}</h1>
         </div>
 
         <div class="chatboxBlock">
@@ -31,6 +31,12 @@
             const userInput = document.getElementById("userInput");
             const sendBtn = document.getElementById("sendChatBtn")
 
+            async function updateWelcomeText() {
+                const res = await fetch("/api/user-name");
+                const data = await res.json();
+                document.getElementById("titleText").textContent = `Welcome, ${data.user_name}`;
+            }
+
             function appendMessage(text, sender) {
                 const div = document.createElement("div");
                 div.classList.add("message_box", sender);
@@ -47,7 +53,7 @@
                 userInput.value = "";
 
                 // POST to Flask
-                const res = await fetch("/chat", {
+                const res = await fetch("/api/chat", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ message })
@@ -62,6 +68,8 @@
             userInput.addEventListener("keydown", (e) => {
                 if (e.key === "Enter") sendMessage();
             });
+
+            updateWelcomeText();
         </script>
     </body>
 </html>
